@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+  xsi:type="MailApp">
+
+  <!-- ATTENTION : Remplace le GUID ci-dessous par un nouveau GUID unique -->
+  <!-- Génère-en un sur https://www.guidgen.com/ -->
+  <Id>11111111-2222-3333-4444-555555555555</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Eitan</ProviderName>
+  <DefaultLocale>fr-FR</DefaultLocale>
+  <DisplayName DefaultValue="Alertes SOC" />
+  <Description DefaultValue="Automatisation des alertes SOC (extraction ID, destinataires, réponses types, déplacement)" />
+
+  <!-- Icônes - on utilise des icônes par défaut hébergées sur GitHub Pages -->
+  <IconUrl DefaultValue="https://VOTRE-USER.github.io/soc-addin/icon-64.png" />
+  <HighResolutionIconUrl DefaultValue="https://VOTRE-USER.github.io/soc-addin/icon-128.png" />
+
+  <SupportUrl DefaultValue="https://VOTRE-USER.github.io/soc-addin/" />
+
+  <Hosts>
+    <Host Name="Mailbox" />
+  </Hosts>
+
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.5" />
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://VOTRE-USER.github.io/soc-addin/taskpane.html" />
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <Permissions>ReadWriteMailbox</Permissions>
+
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+  </Rule>
+
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.5">
+        <bt:Set Name="Mailbox" />
+      </bt:Sets>
+    </Requirements>
+
+    <Hosts>
+      <Host xsi:type="MailHost">
+
+        <DesktopFormFactor>
+          <FunctionFile resid="functionFile" />
+
+          <!-- Boutons sur un mail OUVERT en lecture -->
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="socGroup">
+                <Label resid="groupLabel" />
+
+                <!-- Bouton 1 : Alerte SOC -->
+                <Control xsi:type="Button" id="btnAlerteSOC">
+                  <Label resid="btnAlerteSOC.label" />
+                  <Supertip>
+                    <Title resid="btnAlerteSOC.label" />
+                    <Description resid="btnAlerteSOC.tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon16" />
+                    <bt:Image size="32" resid="icon32" />
+                    <bt:Image size="80" resid="icon80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="taskpaneUrl" />
+                  </Action>
+                </Control>
+
+                <!-- Bouton 2 : Légitime -->
+                <Control xsi:type="Button" id="btnLegitime">
+                  <Label resid="btnLegitime.label" />
+                  <Supertip>
+                    <Title resid="btnLegitime.label" />
+                    <Description resid="btnLegitime.tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon16" />
+                    <bt:Image size="32" resid="icon32" />
+                    <bt:Image size="80" resid="icon80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="taskpaneUrl" />
+                  </Action>
+                </Control>
+
+                <!-- Bouton 3 : Clôture -->
+                <Control xsi:type="Button" id="btnCloture">
+                  <Label resid="btnCloture.label" />
+                  <Supertip>
+                    <Title resid="btnCloture.label" />
+                    <Description resid="btnCloture.tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon16" />
+                    <bt:Image size="32" resid="icon32" />
+                    <bt:Image size="80" resid="icon80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="taskpaneUrl" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon16" DefaultValue="https://VOTRE-USER.github.io/soc-addin/icon-16.png" />
+        <bt:Image id="icon32" DefaultValue="https://VOTRE-USER.github.io/soc-addin/icon-32.png" />
+        <bt:Image id="icon80" DefaultValue="https://VOTRE-USER.github.io/soc-addin/icon-80.png" />
+      </bt:Images>
+
+      <bt:Urls>
+        <bt:Url id="functionFile" DefaultValue="https://VOTRE-USER.github.io/soc-addin/commands.html" />
+        <bt:Url id="taskpaneUrl" DefaultValue="https://VOTRE-USER.github.io/soc-addin/taskpane.html" />
+      </bt:Urls>
+
+      <bt:ShortStrings>
+        <bt:String id="groupLabel" DefaultValue="Alertes SOC" />
+        <bt:String id="btnAlerteSOC.label" DefaultValue="Alerte SOC" />
+        <bt:String id="btnLegitime.label" DefaultValue="Légitime" />
+        <bt:String id="btnCloture.label" DefaultValue="Clôture" />
+      </bt:ShortStrings>
+
+      <bt:LongStrings>
+        <bt:String id="btnAlerteSOC.tooltip" DefaultValue="Crée un nouveau mail avec destinataires extraits, sujet et corps nettoyés" />
+        <bt:String id="btnLegitime.tooltip" DefaultValue="Répond à tous avec un message légitime et déplace vers Traitée" />
+        <bt:String id="btnCloture.tooltip" DefaultValue="Répond à tous avec un message de clôture" />
+      </bt:LongStrings>
+    </Resources>
+
+  </VersionOverrides>
+</OfficeApp>

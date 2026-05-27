@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Alertes SOC</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>🛡️ Alertes SOC</h2>
+
+        <div id="status" class="status hidden"></div>
+
+        <div class="section">
+            <h3>📁 Mes contacts</h3>
+            <p id="contactsInfo">Aucun fichier de contacts chargé.</p>
+            <input type="file" id="jsonFile" accept=".json" style="display:none" />
+            <button id="btnLoadContacts" class="btn-secondary">Charger fichier JSON</button>
+            <button id="btnClearContacts" class="btn-secondary hidden">Effacer</button>
+        </div>
+
+        <div class="section">
+            <h3>⚡ Actions</h3>
+            <button id="btnAlerteSOC" class="btn-primary">📧 Alerte SOC (nouveau mail)</button>
+            <button id="btnLegitime" class="btn-success">✅ Légitime (répondre + Traitée)</button>
+            <button id="btnCloture" class="btn-info">🔒 Clôture (répondre)</button>
+        </div>
+
+        <div class="section" id="debug">
+            <h3>🔍 Détails</h3>
+            <pre id="debugInfo"></pre>
+        </div>
+    </div>
+
+    <script src="logic.js"></script>
+    <script src="taskpane.js"></script>
+</body>
+</html>
