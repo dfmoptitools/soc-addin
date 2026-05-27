@@ -16,10 +16,10 @@
   <Description DefaultValue="Automatisation des alertes SOC (extraction ID, destinataires, réponses types, déplacement)" />
 
   <!-- Icônes - on utilise des icônes par défaut hébergées sur GitHub Pages -->
-  <IconUrl DefaultValue="https://VOTRE-USER.github.io/soc-addin/icon-64.png" />
-  <HighResolutionIconUrl DefaultValue="https://VOTRE-USER.github.io/soc-addin/icon-128.png" />
+  <IconUrl DefaultValue="https://dfmoptitools.github.io/soc-addin/icon-64.png" />
+  <HighResolutionIconUrl DefaultValue="https://dfmoptitools.github.io/soc-addin/icon-128.png" />
 
-  <SupportUrl DefaultValue="https://VOTRE-USER.github.io/soc-addin/" />
+  <SupportUrl DefaultValue="https://dfmoptitools.github.io/soc-addin/" />
 
   <Hosts>
     <Host Name="Mailbox" />
@@ -34,7 +34,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://VOTRE-USER.github.io/soc-addin/taskpane.html" />
+        <SourceLocation DefaultValue="https://dfmoptitools.github.io/soc-addin/taskpane.html" />
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -127,14 +127,14 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="icon16" DefaultValue="https://VOTRE-USER.github.io/soc-addin/icon-16.png" />
-        <bt:Image id="icon32" DefaultValue="https://VOTRE-USER.github.io/soc-addin/icon-32.png" />
-        <bt:Image id="icon80" DefaultValue="https://VOTRE-USER.github.io/soc-addin/icon-80.png" />
+        <bt:Image id="icon16" DefaultValue="https://dfmoptitools.github.io/soc-addin/icon-16.png" />
+        <bt:Image id="icon32" DefaultValue="https://dfmoptitools.github.io/soc-addin/icon-32.png" />
+        <bt:Image id="icon80" DefaultValue="https://dfmoptitools.github.io/soc-addin/icon-80.png" />
       </bt:Images>
 
       <bt:Urls>
-        <bt:Url id="functionFile" DefaultValue="https://VOTRE-USER.github.io/soc-addin/commands.html" />
-        <bt:Url id="taskpaneUrl" DefaultValue="https://VOTRE-USER.github.io/soc-addin/taskpane.html" />
+        <bt:Url id="functionFile" DefaultValue="https://dfmoptitools.github.io/soc-addin/commands.html" />
+        <bt:Url id="taskpaneUrl" DefaultValue="https://dfmoptitools.github.io/soc-addin/taskpane.html" />
       </bt:Urls>
 
       <bt:ShortStrings>
